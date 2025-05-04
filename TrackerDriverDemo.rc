@@ -1,0 +1,580 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\TrackerDriverDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxdb.rc""          // Database resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\TrackerDriverDemo.ico"
+
+IDR_TRACKETYPE          ICON                    "res\\TrackerDriverDemoDoc.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&Tracker"
+    BEGIN
+        MENUITEM "&Select Mode...",             ID_TRACKER_MODE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Commands"
+    BEGIN
+        MENUITEM "&Connect...",                 ID_COMMAND_CONNECT
+        MENUITEM "&Disconnect",                 ID_COMMAND_DISCONNECT
+        MENUITEM SEPARATOR
+        POPUP "&Demonstrations"
+        BEGIN
+            MENUITEM "&Execute Command Sequence...", ID_COMMAND_SEQUENCE
+            MENUITEM "&Asynchronous Messages...",   ID_COMMAND_ASYNCMSGS
+            MENUITEM "A&bort Tracker Command...",   ID_COMMAND_ABORT
+            MENUITEM "&Handle Exceptions...",       ID_COMMAND_EXCEPTION
+            MENUITEM "&Run Applications...",        ID_COMMAND_RUN_APPLICATION
+            MENUITEM "Combo Search...",             ID_DEMONSTRATIONS_COMBOSEARCH
+            MENUITEM "Run Automated Comp...",       ID_DEMONSTRATIONS_RUNAUTOMATEDCOMP
+        END
+        POPUP "Measurements"
+        BEGIN
+            MENUITEM "&Foregnd Measurements...",    ID_COMMAND_FOREGND
+            MENUITEM "&Backgnd Measurements...",    ID_COMMAND_BACKGND
+            MENUITEM "Run &Both measurements...",   ID_COMMAND_BOTH
+        END
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About TrackerDriverDemo...", ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 0, 0, 217, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TrackerDriverDemo"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "TrackerDriverDemo Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 1902",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_DIALOG_MODE DIALOG 0, 0, 179, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Mode"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,75,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,120,75,50,14
+    CONTROL         "Using UI Thread in BLOCKING mode",IDC_RADIO_UI,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,17,133,10
+    CONTROL         "Using Worker Thread in BLOCKING mode",IDC_RADIO_WORKER,
+                    "Button",BS_AUTORADIOBUTTON,15,35,149,10
+    CONTROL         "Using EVENT DRIVEN ( Listeners ) mode",IDC_RADIO_LISTENER,
+                    "Button",BS_AUTORADIOBUTTON,15,53,147,10
+    GROUPBOX        "Select the mode to run the Tracker commands",IDC_STATIC,7,5,163,66
+END
+
+IDD_DIALOG_CONNECT DIALOGEX 0, 0, 195, 71
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Connect"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_SERIAL_NUMBER,14,22,157,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "OK",IDOK,76,48,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,48,50,14,NOT WS_TABSTOP
+    GROUPBOX        "Specify the serial number or ip address of the tracker",IDC_STATIC,9,7,170,39
+END
+
+IDD_DIALOG_COMMAND_SEQUENCE DIALOG 0, 0, 177, 133
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Demonstration of Commands in Sequence"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Start Executing",IDC_BUTTON_START,100,30,60,14
+    LTEXT           "Motor State",IDC_STATIC,10,47,41,10
+    LTEXT           "Intialized",IDC_STATIC,10,32,30,10
+    LTEXT           "Tracking State",IDC_STATIC,10,62,50,10
+    LTEXT           "Target Present",IDC_STATIC,10,77,50,10
+    LTEXT           "Target Location valid",IDC_STATIC,10,92,75,10
+    LTEXT           "Home",IDC_STATIC,10,107,25,10
+    LTEXT           "Please select ""Start executing"" button to start the execution of the Tracker commands.",IDC_STATIC,5,6,165,19
+END
+
+IDD_DIALOG_ASYNC_MSGS DIALOG 0, 0, 197, 186
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Asynchronous Messages"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Turn Motors On",IDC_BUTTON_MOTORS,14,5,74,14
+    PUSHBUTTON      "Set Distance Valid",IDC_BUTTON_DISTANCE,14,27,74,14
+    PUSHBUTTON      "Change Sight Mode",IDC_BUTTON_SIGHT,14,50,74,14
+    CONTROL         "SMR 0.500 in",IDC_RADIO_0_5,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_GROUP,23,83,56,12
+    CONTROL         "SMR 0.875 in",IDC_RADIO_0_875,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,23,100,56,12
+    CONTROL         "SMR 1.500 in",IDC_RADIO_1_5,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,23,117,56,12
+    CONTROL         "SMM",IDC_RADIO_SMM,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,23,134,56,12
+    CONTROL         "Six Dof",IDC_RADIO_SIXDOF,"Button",BS_AUTORADIOBUTTON | BS_PUSHLIKE,23,150,56,12
+    LTEXT           "Motors",IDC_STATIC,3,179,25,8
+    LTEXT           "Distance",IDC_STATIC,61,179,29,8
+    LTEXT           "Target Type",IDC_STATIC,103,179,40,8
+    LTEXT           "Sight",IDC_STATIC,163,179,18,8
+    GROUPBOX        "Target Type",IDC_STATIC,14,71,74,99,BS_CENTER
+END
+
+IDD_DIALOG_SEARCH DIALOG 0, 0, 157, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Start Search",IDC_BUTTON_SEARCH,53,29,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,53,52,50,14
+END
+
+IDD_DIALOG_APPLICATION DIALOG 0, 0, 277, 146
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Application"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_AVAILABLE_APPS,20,35,104,76,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Stop Application(s)",IDC_BUTTON_STOP,38,125,65,14
+    LISTBOX         IDC_LIST_STARTED_APPS,151,35,104,76,NOT LBS_NOTIFY | LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Available applications:",IDC_STATIC,10,5,125,115,BS_LEFT
+    LTEXT           "Double click on any application to run",IDC_STATIC,19,16,106,16
+    GROUPBOX        "Started applications:",IDC_STATIC,140,5,125,115,BS_LEFT
+    LTEXT           "Displaying the applications that are currently running.",IDC_STATIC,151,16,100,16
+END
+
+IDD_DIALOG_MEASURE DIALOGEX 0, 0, 564, 231
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Foreground Measurements"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "&Start",IDC_BUTTON_START,506,213,48,14
+    CONTROL         "1",IDC_RADIO_SINGLE_MEASUREMENTS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,62,12,18,8
+    CONTROL         "10",IDC_RADIO_TEN_MEASUREMENTS,"Button",BS_AUTORADIOBUTTON,82,12,21,8
+    LTEXT           "Measurements:",IDC_STATIC,9,12,50,8
+END
+
+IDD_DIALOG_BOTH_MEASUREMENTS DIALOGEX 0, 0, 589, 382
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Foreground and Background Measurements"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Start ",IDC_BUTTON_START_FOREGND,477,165,46,14
+    PUSHBUTTON      "Stop",IDC_BUTTON_STOP_FOREGND,526,165,46,14
+    PUSHBUTTON      "Start",IDC_BUTTON_START_BACKGND,475,346,46,14
+    PUSHBUTTON      "Stop",IDC_BUTTON_STOP_BACKGND,525,346,46,14
+    GROUPBOX        "Foreground Measurements",IDC_FOREGND_STATIC,11,11,565,173
+    GROUPBOX        "Background Measurements",IDC_BACKGND_STATIC,12,195,564,170
+END
+
+IDD_DIALOG_COMBO_SEARCH DIALOGEX 0, 0, 541, 173
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Combo Search"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Combo Search",IDC_BUTTON_CSEARCH_1,30,32,67,14
+    EDITTEXT        IDC_EDIT_AZ_ABS,95,85,96,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ZE_ABS,264,85,96,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DIST,427,85,96,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_AZ_TOL,94,105,96,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ZE_TOL,263,105,96,14,ES_AUTOHSCROLL
+    CONTROL         "Spiral Search ",IDC_CHECK_SPIRAL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,380,106,62,10
+    PUSHBUTTON      "Search",IDC_BUTTON_CSEARCH_2,470,121,50,14
+    PUSHBUTTON      "Close",IDCANCEL,476,144,50,14
+    GROUPBOX        "Search for a target that is closest to the current location",IDC_STATIC,21,18,506,37
+    LTEXT           "Az Absolute (rads)",IDC_STATIC,26,88,64,8
+    LTEXT           "Distance(m)",IDC_STATIC,380,88,43,8
+    LTEXT           "Ze Tol (rads)",IDC_STATIC,202,108,55,8
+    LTEXT           "Ze Absolute(rads)",IDC_STATIC,201,88,58,8
+    LTEXT           "Az Tol (rads)",IDC_STATIC,28,106,54,8
+    GROUPBOX        "Search for a target that is closest to the current location within the specified parameters",IDC_STATIC,20,67,508,74
+END
+
+IDD_RUN_AUTOMATED_COMP_DIALOG DIALOGEX 0, 0, 121, 73
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Run Automated Comp"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,32,40,50,14
+    PUSHBUTTON      "Run",IDC_RUN_AUTOMATED_COMP_BUTTON,31,18,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "TrackerDriverDemo MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "TrackerDriverDemo"
+            VALUE "LegalCopyright", "Copyright (C) 1902"
+            VALUE "OriginalFilename", "TrackerDriverDemo.EXE"
+            VALUE "ProductName", "TrackerDriverDemo Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG_CONNECT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 159
+    END
+
+    IDD_DIALOG_ASYNC_MSGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_DIALOG_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_DIALOG_MEASURE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 554
+    END
+
+    IDD_DIALOG_BOTH_MEASUREMENTS, DIALOG
+    BEGIN
+        RIGHTMARGIN, 583
+    END
+
+    IDD_DIALOG_COMBO_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 534
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_RUN_AUTOMATED_COMP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 114
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_RUN_AUTOMATED_COMP_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_CONNECT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "TrackerDriverDemo"
+    IDR_TRACKETYPE          "\nTracke\nTracke\n\n\nTrackerDriverDemo.Document\nTracke Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "TrackerDriverDemo"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE
+BEGIN
+    ID_TRACKER_MODE         "Select a mode to run the Tracker commands"
+    ID_COMMAND_CONNECT      "Select this to establish a connection to Tracker"
+    ID_COMMAND_DISCONNECT   "Select this to disconnect from the Tracker"
+    ID_COMMAND_SEQUENCE     "Selec this to executes commands one after another in a sequence"
+    ID_COMMAND_ASYNCMSGS    "Select this to see how Asynchronous messages work"
+    ID_COMMAND_ABORT        "Select this to see how a Tracker command can be aborted"
+    ID_COMMAND_EXCEPTION    "Select this to see how exceptions are handled"
+    ID_COMMAND_APPLICATION  "Select this to run applications"
+    ID_COMMAND_FOREGND      "Select this to run foregnd measurements"
+    ID_COMMAND_BACKGND      "Select this to run backgnd measurements"
+    ID_COMMAND_BOTH         "Select this to run both the forgnd and backgnd measurements"
+END
+
+STRINGTABLE
+BEGIN
+    ID_COMMAND_RUN_APPLICATION "Select this to run applications"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\TrackerDriverDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxdb.rc"          // Database resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
